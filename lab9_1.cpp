@@ -3,9 +3,7 @@
 using namespace std;
 
 int main(){	
-	long double loan;
-	double rate;
-	long double amount;
+	double loan, rate, amount;
 
 	cout << "Enter initial loan: ";
 	cin >> loan;
@@ -28,13 +26,23 @@ int main(){
 	//use 'fixed' and 'setprecision' to fix the number of decimal digits for displaying
 	//you can change input argument of 'setprecision()' to see the effect
 	cout << fixed << setprecision(2); 
-	cout << setw(13) << right << 1; 
-	cout << setw(13) << right << 1000.0;
-	cout << setw(13) << right << 50.0;
-	cout << setw(13) << right << 1050.0;
-	cout << setw(13) << right << 100.0;
-	cout << setw(13) << right << 950.0;
-	cout << "\n";	
+	for(int year = 1; loan>0; year++){
+		double interest = loan * (rate / 100.0);
+		double total = loan + interest;
+		double payment = (amount > total) ? total : amount;
+		double new_balance = total - payment;
+
+		cout << setw(13) << right << year;
+        cout << setw(13) << right << loan;
+        cout << setw(13) << right << interest;
+        cout << setw(13) << right << total;
+        cout << setw(13) << right << payment;
+        cout << setw(13) << right << new_balance;
+        cout << "\n";
+		loan = new_balance;
+		
+	}
+		
 	
 	return 0;
 }
