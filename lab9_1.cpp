@@ -15,12 +15,12 @@ int main(){
 	//use 'setw' to set width of table and 'left' to set left-alignment
 	//you can change input argument of 'setw()' to see the effect
 	//Try to change from 'left' to 'right' and see the effect
-	cout << setw(13) << right << "EndOfYear#"; 
-	cout << setw(13) << right << "PrevBalance"; 
-	cout << setw(13) << right << "Interest"; 
-	cout << setw(13) << right << "Total";
-	cout << setw(13) << right << "Payment";
-	cout << setw(13) << right << "NewBalance";
+	cout << setw(13) << left << "EndOfYear#"; 
+	cout << setw(13) << left << "PrevBalance"; 
+	cout << setw(13) << left << "Interest"; 
+	cout << setw(13) << left << "Total";
+	cout << setw(13) << left << "Payment";
+	cout << setw(13) << left << "NewBalance";
 	cout << "\n";
 	
 	//use 'fixed' and 'setprecision' to fix the number of decimal digits for displaying
@@ -32,12 +32,12 @@ int main(){
 		double payment = (amount > total) ? total : amount;
 		double new_balance = total - payment;
 
-		cout << setw(13) << right << year;
-        cout << setw(13) << right << loan;
-        cout << setw(13) << right << interest;
-        cout << setw(13) << right << total;
-        cout << setw(13) << right << payment;
-        cout << setw(13) << right << new_balance;
+		cout << setw(13) << left << year;
+        cout << setw(13) << left << loan;
+        cout << setw(13) << left << interest;
+        cout << setw(13) << left << total;
+        cout << setw(13) << left << payment;
+        cout << setw(13) << left << new_balance;
         cout << "\n";
 		loan = new_balance;
 		
